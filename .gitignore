@@ -1,0 +1,22 @@
+# Nuxt
+.nuxt
+.output
+node_modules
+dist
+
+# Environment
+.env
+.env.*
+
+# IDE
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# System
+.DS_Store
+Thumbs.db

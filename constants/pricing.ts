@@ -1,0 +1,55 @@
+export interface PricingPlan {
+  title: string
+  description: string
+  price: {
+    monthly: string
+    yearly: string
+  }
+  features: string[]
+  highlighted: boolean
+}
+
+export const PRICING_PLANS: PricingPlan[] = [
+  {
+    title: 'Базовый',
+    description: 'Для простых задач',
+    price: { monthly: '599₽', yearly: '479₽' },
+    features: [
+      '100 иллюстраций в месяц',
+      'Экспорт в SVG',
+      'Настраиваемая палитра',
+      'Коммерческое использование',
+      'Отмена в любое время',
+      'Поддержка 24/7',
+    ],
+    highlighted: false,
+  },
+  {
+    title: 'Профи',
+    description: 'Самый популярный тариф',
+    price: { monthly: '1 599₽', yearly: '1 279₽' },
+    features: [
+      '500 иллюстраций в месяц',
+      'Экспорт в SVG',
+      'Настраиваемая палитра',
+      'Коммерческое использование',
+      'Отмена в любое время',
+      'Приоритетная поддержка 24/7',
+    ],
+    highlighted: true,
+  },
+  {
+    title: 'Бизнес',
+    description: 'Для команд и агентств',
+    price: { monthly: '8 999₽', yearly: '7 199₽' },
+    features: [
+      '5000 иллюстраций в месяц',
+      'Экспорт в SVG',
+      'Настраиваемая палитра',
+      'Коммерческое использование',
+      'Отмена в любое время',
+      'Выделенная поддержка',
+    ],
+    highlighted: false,
+  },
+] 
