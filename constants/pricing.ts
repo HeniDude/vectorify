@@ -1,13 +1,4 @@
-export interface PricingPlan {
-  title: string
-  description: string
-  price: {
-    monthly: string
-    yearly: string
-  }
-  features: string[]
-  highlighted: boolean
-}
+import type { PricingPlan } from "~/types"
 
 export const PRICING_PLANS: PricingPlan[] = [
   {

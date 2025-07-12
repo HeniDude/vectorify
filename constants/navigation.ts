@@ -1,7 +1,4 @@
-export interface NavigationItem {
-    text: string
-    href: string
-}
+import type { NavigationItem } from "~/types"
 
 export const NAVIGATION_ITEMS: NavigationItem[] = [
     { text: 'Explore', href: '#explore' },

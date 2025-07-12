@@ -1,7 +1,4 @@
-export interface HeroWord {
-    text: string
-    color: string
-}
+import type { HeroWord } from "~/types"
 
 export const HERO_WORDS: HeroWord[] = [
     { text: 'сайтов', color: '#f97316' },
