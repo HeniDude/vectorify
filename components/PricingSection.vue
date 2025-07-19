@@ -29,59 +29,26 @@ const getButtonColor = (period: "monthly" | "yearly") => {
     </p>
 
     <div class="flex justify-center mb-6 sm:mb-8 px-4">
-      <div
-        style="
-          position: relative;
-          display: flex;
-          background-color: #f3f4f6;
-          border-radius: 9999px;
-          padding: 6px;
-          width: fit-content;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-          border: 1px solid #e5e7eb;
-        "
-      >
+      <div class="relative flex bg-gray-100 rounded-full p-1.5 w-fit shadow-sm border border-gray-200">
         <div
-          :style="{
-            position: 'absolute',
-            top: 6,
-            left: billingPeriod === 'monthly' ? 6 : 'calc(50% + 6px)',
-            width: 'calc(50% - 12px)',
-            height: 'calc(100% - 12px)',
-            backgroundColor: '#111827',
-            borderRadius: '9999px',
-            transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-            zIndex: 0,
-            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-          }"
+          :class="[
+            'absolute top-1.5 h-[calc(100%-12px)] bg-black rounded-full transition-all duration-300 ease-in-out shadow-sm',
+            billingPeriod === 'monthly' ? 'left-1.5 w-[calc(50%-12px)]' : 'left-[calc(50%+6px)] w-[calc(50%-12px)]'
+          ]"
         />
 
         <button
           v-for="period in periods"
           :key="period"
           @click="billingPeriod = period"
-          :data-period="period"
-          :class="{
-            'toggle-button': true,
-            'toggle-button-active': billingPeriod === period
-          }"
-          :style="{
-            position: 'relative',
-            zIndex: 1,
-            width: '140px',
-            padding: '10px 16px',
-            borderRadius: '9999px',
-            fontWeight: 600,
-            fontSize: '0.95rem',
-            backgroundColor: 'transparent',
-            border: 'none',
-            cursor: 'pointer',
-            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-          }"
+          :class="[
+            'toggle-button',
+            billingPeriod === period ? 'toggle-button-active' : ''
+          ]"
         >
           <span v-if="period === 'monthly'">Месяц</span>
           <span v-else>
-            Год <span :style="{ fontSize: '0.85rem', opacity: '0.8' }">(-20%)</span>
+            Год <span class="text-xs opacity-80">(-20%)</span>
           </span>
         </button>
       </div>
@@ -238,29 +205,8 @@ const getButtonColor = (period: "monthly" | "yearly") => {
 }
 
 .toggle-button-active {
+  color: #ffffff !important;
   font-weight: 700;
-}
-
-/* Дополнительные стили для гарантии */
-button.toggle-button-active {
-  font-weight: 700;
-}
-
-button.toggle-button:not(.toggle-button-active) {
-  color: #6b7280 !important;
-}
-
-button.toggle-button:not(.toggle-button-active):hover {
-  color: #374151 !important;
-}
-
-/* Специфичные стили для каждого периода */
-button.toggle-button-active[data-period="monthly"] {
-  color: #000 !important;
-}
-
-button.toggle-button-active[data-period="yearly"] {
-  color: #fff !important;
 }
 
 .pricing-grid {
