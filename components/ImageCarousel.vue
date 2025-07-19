@@ -139,9 +139,9 @@ const images2 = [...allImages.slice(6, 12), ...allImages.slice(12, 18), ...allIm
 const images3 = [...allImages.slice(12, 18), ...allImages.slice(0, 6), ...allImages.slice(6, 12)]
 const images4 = [...allImages.slice(3, 9), ...allImages.slice(9, 15), ...allImages.slice(15, 18), ...allImages.slice(0, 3)]
 
-const ITEM_HEIGHT = 160
+const ITEM_HEIGHT = 200
 const VISIBLE_COUNT = 4
-const SPEED = 0.5
+const SPEED = 0.2
 
 const maxOffset = allImages.length * ITEM_HEIGHT
 
@@ -186,7 +186,7 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .image-carousel {
-  width: 600px;
+  width: 1000px;
   margin: 0 auto;
   padding: 40px 0;
 }
@@ -204,7 +204,7 @@ onBeforeUnmount(() => {
   
   .image-carousel {
     width: 100%;
-    max-width: 520px;
+    max-width: 820px;
     padding: 20px 10px;
   }
   
@@ -213,22 +213,23 @@ onBeforeUnmount(() => {
   }
   
   .carousel-column {
-    width: 140px;
-    height: 560px;
+    width: 260px;
+    height: 700px;
   }
   
   .carousel-item {
-    height: 140px;
+    height: 175px;
+    padding: 8px 0;
   }
   
   .image-container {
-    width: 110px;
-    height: 110px;
+    width: 240px;
+    height: 140px;
   }
 }
 .carousel-column {
-  width: 160px;
-  height: 640px;
+  width: 280px;
+  height: 800px;
   overflow: hidden;
   border-radius: 16px;
   background: #f5f5f5;
@@ -268,14 +269,15 @@ onBeforeUnmount(() => {
   will-change: transform;
 }
 .carousel-item {
-  height: 160px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px 0;
 }
 .image-container {
-  width: 140px;
-  height: 140px;
+  width: 260px;
+  height: 180px;
   overflow: hidden;
   border-radius: 12px;
   display: flex;
