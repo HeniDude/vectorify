@@ -56,10 +56,10 @@ onMounted(() => {
     <p
       class="mt-4 max-w-xl text-center text-gray-600 text-base sm:text-lg md:text-xl leading-relaxed px-4"
     >
-      <span class="whitespace-nowrap"
+      <span class="sm:whitespace-nowrap"
         >Векторные иллюстрации под ваш стиль — быстро и без дизайнера. </span
       ><br class="hidden sm:block" />
-      <span class="whitespace-nowrap"
+      <span class="sm:whitespace-nowrap"
         >Настраиваемые SVG для сайта, приложений и рекламы — за пару
         кликов.</span
       >
@@ -85,4 +85,6 @@ onMounted(() => {
     transform: translateY(0px);
   }
 }
+
+
 </style>

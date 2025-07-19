@@ -25,7 +25,7 @@ const billingPeriod = ref<"monthly" | "yearly">("yearly");
       class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 mt-8 sm:mt-12 lg:mt-16 max-w-6xl mx-auto"
     >
       <div
-        class="bg-white rounded-2xl shadow-lg shadow-[inset_0_8px_8px_-8px_rgba(0,0,0,0.1)] p-6 sm:p-8 text-base font-normal text-gray-700 text-left leading-relaxed"
+        class="bg-white rounded-2xl shadow-lg shadow-[inset_0_8px_8px_-8px_rgba(0,0,0,0.1)] p-6 sm:p-8 text-base font-normal text-gray-700 text-left leading-relaxed h-full flex flex-col"
       >
         <div class="flex items-center mb-3">
           <div class="text-xl sm:text-2xl font-semibold flex-grow">
@@ -38,43 +38,43 @@ const billingPeriod = ref<"monthly" | "yearly">("yearly");
           </div>
         </div>
 
-        <div class="bg-gray-50 rounded-xl p-3 sm:p-4 mb-3">
+        <div class="bg-red-50 rounded-xl p-3 sm:p-4 mb-3">
           <div class="flex justify-between items-center">
-            <strong>🔍 Ручной сбор данных</strong>
+            <strong class="text-red-700">🔍 Ручной сбор данных</strong>
             <span>1 – 2 часов</span>
           </div>
           <div>Куча данных и источников</div>
         </div>
 
-        <div class="bg-gray-50 rounded-xl p-3 sm:p-4 mb-3">
+        <div class="bg-red-50 rounded-xl p-3 sm:p-4 mb-3">
           <div class="flex justify-between items-center">
-            <strong>✏️ Планирование дизайна</strong>
+            <strong class="text-red-700">✏️ Планирование дизайна</strong>
             <span>1 – 2 часов</span>
           </div>
           <div>Креативные затыки</div>
         </div>
 
-        <div class="bg-gray-50 rounded-xl p-3 sm:p-4 mb-4">
+        <div class="bg-red-50 rounded-xl p-3 sm:p-4 mb-4">
           <div class="flex justify-between items-center">
-            <strong>🎨 Создание визуала</strong>
+            <strong class="text-red-700">🎨 Создание визуала</strong>
             <span>2 – 3 часов</span>
           </div>
           <div>Технические ограничения и сложные инструменты</div>
         </div>
 
-        <div class="bg-gray-50 rounded-xl p-3 sm:p-4 mb-4">
+        <div class="bg-red-50 rounded-xl p-3 sm:p-4 mb-4">
           <div class="flex justify-between items-center">
-            <strong>🔧 Проверка и правки</strong>
+            <strong class="text-red-700">🔧 Проверка и правки</strong>
             <span>1 – 2 часов</span>
           </div>
           <div>Постоянные правки и оптимизации</div>
         </div>
 
-        <div class="font-semibold text-red-500">Стоимость: от $350+</div>
+        <div class="font-semibold text-red-500 mt-auto">Стоимость: от $350+</div>
       </div>
 
       <div
-        class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 text-base font-normal text-gray-700 text-left leading-relaxed"
+        class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 text-base font-normal text-gray-700 text-left leading-relaxed h-full flex flex-col"
       >
         <div class="flex items-center mb-3">
           <div class="text-xl sm:text-2xl font-semibold flex-grow">
@@ -112,14 +112,14 @@ const billingPeriod = ref<"monthly" | "yearly">("yearly");
         </div>
 
         <div class="bg-green-50 rounded-xl p-3 sm:p-4 mb-4">
-          <div class="flex justify-between items-center">
+          <div class="flex flex-col justify-start items-start flex-wrap gap-2">
             <strong class="text-green-700">✨ Творческая свобода</strong>
-            <span>Без ограничений</span>
+            <span class="whitespace-nowrap">Без ограничений</span>
+            <span class="whitespace-nowrap">Бесконечные возможности</span>
           </div>
-          <div>Бесконечные возможности</div>
         </div>
 
-        <div class="font-semibold text-green-600">
+        <div class="font-semibold text-green-600 mt-auto">
           Стоимость: $0.5 за дизайн
         </div>
       </div>
