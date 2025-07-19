@@ -1,31 +1,35 @@
 <script setup lang="ts">
-import { HERO_WORDS } from '~/constants'
+import { HERO_WORDS } from "~/constants";
 
-const index = ref(0)
-const fadeOut = ref(false)
-const animatingWord = ref(HERO_WORDS[0])
+const index = ref(0);
+const fadeOut = ref(false);
+const animatingWord = ref(HERO_WORDS[0]);
 
 onMounted(() => {
   const interval = setInterval(() => {
-    fadeOut.value = true
+    fadeOut.value = true;
 
     setTimeout(() => {
-      const nextIndex = (index.value + 1) % HERO_WORDS.length
-      animatingWord.value = HERO_WORDS[nextIndex]
-      index.value = nextIndex
-      fadeOut.value = false
-    }, 200)
-  }, 3000)
+      const nextIndex = (index.value + 1) % HERO_WORDS.length;
+      animatingWord.value = HERO_WORDS[nextIndex];
+      index.value = nextIndex;
+      fadeOut.value = false;
+    }, 200);
+  }, 3000);
 
   onUnmounted(() => {
-    clearInterval(interval)
-  })
-})
+    clearInterval(interval);
+  });
+});
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center min-h-screen bg-white text-gray-900 pt-8">
-    <h1 class="font-inter text-2xl sm:text-3xl md:text-4xl lg:text-[3.75rem] xl:text-6xl font-bold text-center leading-tight sm:leading-[1.25] md:leading-[1.15] mt-8 px-4">
+  <div
+    class="flex flex-col items-center justify-center min-h-screen bg-white text-gray-900 pt-8"
+  >
+    <h1
+      class="font-inter text-2xl sm:text-3xl md:text-4xl lg:text-[3.75rem] xl:text-6xl font-bold text-center leading-tight sm:leading-[1.25] md:leading-[1.15] mt-8 px-4"
+    >
       Векторные иллюстрации <br class="hidden sm:block" />
       для
       <span class="inline-block min-w-24 text-left">
@@ -39,8 +43,8 @@ onMounted(() => {
             animation: fadeOut
               ? 'none'
               : i === 0
-                ? 'letterFadeIn 0s ease 0s both'
-                : `letterFadeIn 0.4s ease ${i * 0.09}s both`,
+              ? 'letterFadeIn 0s ease 0s both'
+              : `letterFadeIn 0.4s ease ${i * 0.09}s both`,
             color: animatingWord.color,
           }"
         >
@@ -49,9 +53,16 @@ onMounted(() => {
       </span>
     </h1>
 
-    <p class="mt-4 max-w-xl text-center text-gray-600 text-base sm:text-lg md:text-xl leading-relaxed px-4">
-      Векторные иллюстрации под ваш стиль — быстро и без дизайнера. <br class="hidden sm:block" />
-      Настраиваемые SVG для сайта, приложений и рекламы — за пару кликов.
+    <p
+      class="mt-4 max-w-xl text-center text-gray-600 text-base sm:text-lg md:text-xl leading-relaxed px-4"
+    >
+      <span class="whitespace-nowrap"
+        >Векторные иллюстрации под ваш стиль — быстро и без дизайнера. </span
+      ><br class="hidden sm:block" />
+      <span class="whitespace-nowrap"
+        >Настраиваемые SVG для сайта, приложений и рекламы — за пару
+        кликов.</span
+      >
     </p>
 
     <a

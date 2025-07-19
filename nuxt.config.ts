@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   css: ["~/assets/css/reset.css", "~/assets/css/main.css"],
   build: {
     transpile: ["lucide-vue-next"],

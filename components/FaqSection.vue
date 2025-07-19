@@ -34,7 +34,7 @@ const toggle = (index: number) => {
 
           <div
             v-if="openIndex === index"
-            class="text-gray-600 text-sm sm:text-base leading-relaxed px-4 sm:px-6"
+            class="text-gray-600 text-sm sm:text-base leading-relaxed px-4 sm:px-6 mb-4"
           >
             {{ item.answer }}
           </div>
