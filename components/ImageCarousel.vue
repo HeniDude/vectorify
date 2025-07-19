@@ -12,7 +12,12 @@
             class="carousel-item"
           >
             <div class="image-container">
-              <img :src="image" :alt="`Image ${index + 1}`" class="carousel-image" />
+              <img 
+                :src="image" 
+                :alt="`Image ${index + 1}`" 
+                class="carousel-image"
+                @error="handleImageError"
+              />
             </div>
           </div>
           <div
@@ -110,25 +115,24 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const allImages = [
   '/images/laptop-connected-to-a-server--clean-minimal-tech-i.png',
-  '/images/-simple-flat-vector-of-organizational-chart-with-s.png',
-  '/images/-vector-portrait-of-a-surprised-woman--clean-blog-.png',
-  '/images/-flat-warm-toned-cup-of-coffee-with-steam--cozy-an.png',
-  '/images/-vector-icon-set-of-social-media-elements--heart--.png',
-  '/images/-modern-cityscape-with-minimal-detail--line-art-st.png',
-  '/images/-vector-icon-set-of-social-media-elements--heart-- (1).png',
-  '/images/-abstract-colorful-burst-symbolizing-creativity--d.png',
-  '/images/-business-meeting-between-two-people-at-a-desk--mi.png',
-  '/images/-person-reading-book-at-a-desk--simple-cozy-worksp.png',
-  '/images/-adorable-blue-cartoon-alien-character-sitting--cu.png',
-  '/images/-simple-illustration-of-a-person-riding-a-bike-in-.png',
-  '/images/-person-reading-book-at-a-desk--simple-cozy-worksp (1).png',
-  '/images/-minimal-line-art-of-a-cozy-street-coffee-shop--cl.png',
-  '/images/-two-scientists-discussing-formulas-on-whiteboard-.png',
-  '/images/-handwritten-brush-typography-that-says--warrin---.png',
-  '/images/-cute-vector-illustration-of-two-friendly-dogs-sit.png',
-  '/images/-cute-cartoon-coffee-mug-with-happy-face--minimali.png'
+  '/images/simple-flat-vector-of-organizational-chart-with-s.png',
+  '/images/vector-portrait-of-a-surprised-woman--clean-blog.png',
+  '/images/flat-warm-toned-cup-of-coffee-with-steam--cozy-an.png',
+  '/images/vector-icon-set-of-social-media-elements--heart1.png',
+  '/images/modern-cityscape-with-minimal-detail--line-art-st.png',
+  '/images/vector-icon-set-of-social-media-elements--heart.png',
+  '/images/abstract-colorful-burst-symbolizing-creativity--d.png',
+  '/images/business-meeting-between-two-people-at-a-desk--mi.png',
+  '/images/person-reading-book-at-a-desk--simple-cozy-worksp.png',
+  '/images/adorable-blue-cartoon-alien-character-sitting--cu.png',
+  '/images/simple-illustration-of-a-person-riding-a-bike-in.png',
+  '/images/person-reading-book-at-a-desk--simple-cozy-works.png',
+  '/images/minimal-line-art-of-a-cozy-street-coffee-shop--cl.png',
+  '/images/two-scientists-discussing-formulas-on-whiteboard.png',
+  '/images/handwritten-brush-typography-that-says--warrin.png',
+  '/images/cute-vector-illustration-of-two-friendly-dogs-sit.png',
+  '/images/cute-cartoon-coffee-mug-with-happy-face--minimali.png'
 ]
-
 
 const images1 = [...allImages.slice(0, 6), ...allImages.slice(6, 12), ...allImages.slice(12, 18)]
 const images2 = [...allImages.slice(6, 12), ...allImages.slice(12, 18), ...allImages.slice(0, 6)]
@@ -160,6 +164,15 @@ function animate() {
   if (position4.value <= -maxOffset) position4.value = 0
 
   animationFrame = requestAnimationFrame(animate)
+}
+
+function handleImageError(event: Event) {
+  const target = event.target as HTMLImageElement
+  target.style.display = 'none'
+  const container = target.parentElement
+  if (container) {
+    container.innerHTML = '<div class="image-placeholder">Image</div>'
+  }
 }
 
 onMounted(() => {
@@ -277,5 +290,18 @@ onBeforeUnmount(() => {
   height: 100%;
   object-fit: cover;
   border-radius: 12px;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #e0e0e0;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #888;
+  border: 1px dashed #bbb;
 }
 </style> 
