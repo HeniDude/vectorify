@@ -39,7 +39,6 @@ const toggle = (index: number) => {
             {{ item.answer }}
           </div>
 
-          <!-- Горизонтальная линия (только если не последний) -->
           <div
             v-if="index !== FAQ_ITEMS.length - 1"
             class="h-px bg-gray-300 mx-auto w-full rounded"

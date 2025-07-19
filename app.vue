@@ -5,6 +5,8 @@
     <HeroSection />
     
     <SvgSection />
+
+    <ImageCarousel />
     
     <FeaturesSection />
     
