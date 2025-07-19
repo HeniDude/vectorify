@@ -25,10 +25,10 @@ onMounted(() => {
 
 <template>
   <div
-    class="flex flex-col items-center justify-center min-h-screen bg-white text-gray-900 pt-8"
+    class="flex flex-col items-center justify-center min-h-screen bg-white text-gray-900"
   >
     <h1
-      class="font-inter text-2xl sm:text-3xl md:text-4xl lg:text-[3.75rem] xl:text-6xl font-bold text-center leading-tight sm:leading-[1.25] md:leading-[1.15] mt-8 px-4"
+      class="font-inter text-2xl sm:text-3xl md:text-4xl lg:text-[3.75rem] xl:text-6xl font-bold text-center leading-tight sm:leading-[1.25] md:leading-[1.15] px-4"
     >
       Векторные иллюстрации <br class="hidden sm:block" />
       для

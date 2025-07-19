@@ -188,6 +188,7 @@ onBeforeUnmount(() => {
 .image-carousel {
   width: 1000px;
   margin: 0 auto;
+  margin-top: -50px;
   padding: 40px 0;
 }
 .carousel-container {
@@ -214,7 +215,7 @@ onBeforeUnmount(() => {
   
   .carousel-column {
     width: 260px;
-    height: 700px;
+    height: 900px;
   }
   
   .carousel-item {
@@ -229,7 +230,7 @@ onBeforeUnmount(() => {
 }
 .carousel-column {
   width: 280px;
-  height: 800px;
+  height: 1000px;
   overflow: hidden;
   border-radius: 16px;
   background: #f5f5f5;
